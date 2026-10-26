@@ -1,0 +1,8 @@
+Carlotta — Ultimate Edition 6.2
+
+- Added a clear choice after the confession: return the love or stay best friends.
+- Added warm, non-pressuring follow-up messages in Italian and English.
+- Added an explicit “Send your answer to Anas” action using the phone/computer share menu, with copy/prompt fallbacks.
+- No hidden tracking, no automatic transmission, and no server collection of her choice.
+- Updated service-worker cache version so hosted installs can fetch the new build.
+- Preserved the original title menu and all game assets.

@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Carlotta — Una Piccola Avventura",
+  "short_name": "Carlotta",
+  "description": "A little illustrated adventure made with care for Carlotta.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#12102c",
+  "theme_color": "#12102c",
+  "icons": [
+    {"src":"assets/app-icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/app-icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

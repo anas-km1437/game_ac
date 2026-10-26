@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12102c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Carlotta">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/app-icon-192.png">
+<meta name="description" content="Carlotta — Una Piccola Avventura. Una piccola storia interattiva creata con cura da Anas.">
+<title>Carlotta — Una Piccola Avventura</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app" aria-label="Carlotta — Una Piccola Avventura">
+  <canvas id="gameCanvas" aria-label="Gioco platform 2D. Usa le frecce e Spazio per giocare."></canvas>
+
+  <section id="menu" class="screen menu-screen" aria-label="Menu principale">
+    <img class="menu-art" src="assets/menu-art.webp" alt="Illustrazione fantasy di Anas, Carlotta e i loro animali sotto le stelle">
+    <div class="menu-shade" aria-hidden="true"></div>
+    <!-- La prima schermata illustrata è stata conservata. I controlli invisibili sono veri pulsanti accessibili. -->
+    <button class="art-hotspot hs-play" id="playBtn" aria-label="Inizia l'avventura" title="Inizia l'avventura"></button>
+    <button class="art-hotspot hs-settings" id="settingsBtn" aria-label="Impostazioni" title="Impostazioni"></button>
+    <button class="art-hotspot hs-credits" id="creditsBtn" aria-label="Il mondo illustrato" title="Il mondo illustrato"></button>
+    <button class="art-hotspot hs-exit" id="exitBtn" aria-label="Una piccola nota" title="Una piccola nota"></button>
+    <button class="language-hotspot" id="langQuick" aria-label="Cambia lingua" title="Italiano / English">IT / EN</button>
+    <button class="gear-hotspot" id="gearQuick" aria-label="Apri le impostazioni" title="Impostazioni">⚙</button>
+    <div class="mobile-menu">
+      <div class="mobile-brand">Carlotta <span>♥</span></div>
+      <p data-i18n="tagline">Una piccola avventura, per una persona speciale.</p>
+      <div class="mobile-names">Anas <b>♥</b> Carlotta <b>♥</b></div>
+      <button class="primary-btn" id="mobilePlay" data-i18n="play">✦ Inizia l’avventura</button>
+      <button class="soft-btn" id="mobileSettings" data-i18n="settings">Impostazioni</button>
+      <button class="soft-btn" id="mobileCredits" data-i18n="credits">Il mondo illustrato</button>
+      <button class="soft-btn" id="mobileNote" data-i18n="littleNote">Una piccola nota</button>
+      <p class="mobile-foot creator-signature-mini">Anas <span>♥</span> Carlotta</p>
+    </div>
+    <div id="menuLoading" class="loading-chip"><span data-i18n="loading">Il mondo si sta illuminando…</span></div>
+  </section>
+
+  <section id="letter" class="screen hidden">
+    <article class="glass-panel letter-panel">
+      <div class="panel-glyph">✦</div>
+      <p class="eyebrow" data-i18n="littleNote">UNA PICCOLA NOTA</p>
+      <h1 data-i18n="forCarlotta">Per Carlotta <span class="pink">♥</span></h1>
+      <p class="letter-copy" data-i18n="letterCopy">Ho creato questa piccola avventura pensando a te. Spero che ti regali un sorriso e renda speciale anche solo un piccolo momento della tua giornata.</p>
+      <p class="signature" data-i18n="signature">Con affetto, Anas</p>
+      <div class="panel-actions"><button class="primary-btn" id="letterPlay" data-i18n="startJourney">Cominciamo il viaggio ✦</button><button class="soft-btn" data-back="menu" data-i18n="back">Indietro</button></div>
+    </article>
+  </section>
+
+  <section id="settings" class="screen hidden">
+    <article class="glass-panel standard-panel">
+      <p class="eyebrow" data-i18n="settings">IMPOSTAZIONI</p><h2 data-i18n="makeItYours">Rendila tua</h2>
+      <div class="setting-row"><div><strong data-i18n="language">Lingua</strong><p data-i18n="languageDesc">Testi e messaggi della storia</p></div><div class="segmented"><button id="italianBtn" class="selected">IT</button><button id="englishBtn">EN</button></div></div>
+      <div class="setting-row"><div><strong data-i18n="sound">Musica e suoni</strong><p data-i18n="soundDesc">Piccole melodie create per il viaggio</p></div><button id="soundToggle" class="toggle on" aria-pressed="true"><span></span><b data-i18n="on">Attivi</b></button></div>
+      <div class="setting-row"><div><strong data-i18n="difficulty">Esperienza</strong><p data-i18n="difficultyDesc">Puoi saltare e riprovare senza fretta</p></div><span class="calm-tag" data-i18n="relaxed">Senza fretta ✦</span></div>
+      <div class="panel-actions"><button class="primary-btn" data-back="menu" data-i18n="done">Fatto</button></div>
+    </article>
+  </section>
+
+  <section id="credits" class="screen hidden">
+    <article class="glass-panel credits-panel creator-panel">
+      <p class="eyebrow">UNA STORIA CON IL CUORE</p>
+      <h2 class="creator-signature">Anas <span>♥</span> Carlotta</h2>
+      <div class="creator-divider"><span>✧</span><i></i><span>✧</span></div>
+      <p class="creator-subtitle">Immaginata con affetto, per te.</p>
+      <div class="creator-sparkles" aria-hidden="true"><span>✦</span><span>✧</span><span>♥</span><span>✧</span><span>✦</span></div>
+      <div class="panel-actions"><button class="primary-btn" id="creditsPlay" data-i18n="playNow">Gioca adesso ✦</button><button class="soft-btn" data-back="menu" data-i18n="back">Indietro</button></div>
+    </article>
+  </section>
+
+  <section id="pauseScreen" class="screen hidden">
+    <article class="glass-panel compact-panel">
+      <div class="panel-glyph">Ⅱ</div><p class="eyebrow" data-i18n="pause">PAUSA</p><h2 data-i18n="takeYourTime">Prenditi il tuo tempo</h2>
+      <p data-i18n="pauseCopy">Le stelle saranno qui quando tornerai.</p>
+      <div class="panel-actions"><button class="primary-btn" id="resumeBtn" data-i18n="continue">Continua ✦</button><button class="soft-btn" id="pauseMenuBtn" data-i18n="mainMenu">Menu principale</button></div>
+    </article>
+  </section>
+
+  <section id="chapterCard" class="screen hidden">
+    <article class="glass-panel compact-panel chapter-panel">
+      <div class="chapter-number" id="chapterNumber">CAPITOLO I</div><h2 id="chapterTitle">Il sentiero delle lucciole</h2>
+      <p id="chapterSubtitle">Segui le piccole luci: ti mostreranno la strada.</p>
+      <div class="chapter-divider"><span>✦</span></div>
+      <button class="primary-btn" id="chapterGo">Andiamo ✦</button>
+    </article>
+  </section>
+
+  <section id="intermission" class="screen hidden">
+    <article class="glass-panel compact-panel">
+      <div class="panel-glyph" id="chapterMedal">✧</div><p class="eyebrow" data-i18n="chapterComplete">CAPITOLO COMPLETATO</p><h2 id="intermissionTitle">Un altro pezzetto di cielo</h2>
+      <p id="intermissionText">Hai raccolto luci preziose. Il viaggio continua.</p>
+      <div class="result-line"><span data-i18n="starsFound">Stelle trovate</span><strong id="levelResult">0 / 10</strong></div>
+      <div class="panel-actions"><button class="primary-btn" id="nextChapterBtn" data-i18n="nextChapter">Prossimo capitolo →</button><button class="soft-btn" id="intermissionMenu" data-i18n="mainMenu">Menu principale</button></div>
+    </article>
+  </section>
+
+  <section id="letterReveal" class="screen hidden letter-reveal-screen" aria-label="Una lettera per Carlotta">
+    <div class="letter-reveal-backdrop" aria-hidden="true"></div>
+    <div class="letter-reveal-aurora" aria-hidden="true"></div>
+    <div class="letter-reveal-stardust" aria-hidden="true"><i>✦</i><i>✧</i><i>♥</i><i>✧</i><i>✦</i><i>·</i><i>✧</i><i>·</i></div>
+    <article class="letter-reveal-card">
+      <p class="eyebrow" data-i18n="letterRevealEyebrow">CAPITOLO III · UNA PICCOLA LETTERA</p>
+      <h1 data-i18n="letterRevealTitle">C’è una lettera per te, Carlotta</h1>
+      <p class="letter-reveal-copy" data-i18n="letterRevealCopy">La città si è fatta silenziosa. Una piccola busta ti aspetta nella luce delle stelle.</p>
+      <button id="openLetterBtn" class="sealed-envelope" type="button" aria-label="Apri la lettera">
+        <span class="envelope-halo" aria-hidden="true"></span>
+        <svg viewBox="0 0 220 160" aria-hidden="true">
+          <defs><linearGradient id="env-paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4e7"/><stop offset=".55" stop-color="#f5d6e4"/><stop offset="1" stop-color="#d9c8f5"/></linearGradient><linearGradient id="env-flap" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8bed9"/><stop offset="1" stop-color="#b16b9d"/></linearGradient><filter id="env-shadow"><feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#07071e" flood-opacity=".45"/></filter></defs>
+          <g filter="url(#env-shadow)"><rect x="20" y="30" width="180" height="112" rx="9" fill="url(#env-paper)" stroke="#fff0f6" stroke-width="2"/><path d="M22 38L110 100L198 38" fill="none" stroke="#d0a9c3" stroke-width="2"/><path d="M22 137L82 83M198 137L138 83" fill="none" stroke="#d0a9c3" stroke-width="2"/><path class="envelope-flap" d="M22 34L110 96L198 34L110 79Z" fill="url(#env-flap)" stroke="#ffe8f3" stroke-width="1.5"/><circle cx="110" cy="95" r="15" fill="#bb5b91" stroke="#ffe5f0" stroke-width="2"/><path d="M110 86C101 75 91 87 110 102C129 87 119 75 110 86Z" fill="#fff1f5"/></g>
+        </svg>
+        <span class="envelope-label" data-i18n="openEnvelope">Apri la lettera</span>
+      </button>
+      <p class="letter-reveal-signature">Anas <span>♥</span> Carlotta</p>
+      <button class="soft-btn letter-reveal-menu" id="letterBackBtn" data-i18n="mainMenu">Menu principale</button>
+    </article>
+  </section>
+
+  <section id="ending" class="screen hidden">
+    <article class="glass-panel ending-panel romantic-ending">
+      <div class="ending-stars">✦　✧　♥　✧　✦</div>
+      <p class="eyebrow" data-i18n="confessionEyebrow">DOPO AVER APERTO LA PORTA…</p>
+      <h1 data-i18n="confessionTitle">Per Carlotta ♥</h1>
+      <p class="ending-copy" data-i18n="confessionLead">Anas apre la porta del giardino e finalmente trova Carlotta. Le porge un mazzo di rose e una lettera scritta con il cuore.</p>
+      <div class="romantic-scene finale-scene" role="img" aria-label="La stessa illustrazione della copertina: Anas e Carlotta insieme al tramonto, con il mazzo di rose e la lettera">
+        <img class="finale-panorama" src="assets/finale-panorama.webp" alt="Anas e Carlotta seduti insieme davanti alla città illuminata, nella stessa illustrazione della copertina">
+        <div class="finale-vignette" aria-hidden="true"></div>
+        <div class="finale-topline"><span>✦</span> finalmente, insieme <span>✦</span></div>
+        <svg class="finale-bouquet" viewBox="0 0 180 190" aria-hidden="true">
+          <defs>
+            <linearGradient id="fb-stem" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9bc99b"/><stop offset="1" stop-color="#2e7659"/></linearGradient>
+            <linearGradient id="fb-wrap" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe5ee"/><stop offset=".5" stop-color="#e8a7cd"/><stop offset="1" stop-color="#9e568f"/></linearGradient>
+            <radialGradient id="fb-rose"><stop stop-color="#fff0dc"/><stop offset=".26" stop-color="#ffb2ce"/><stop offset=".68" stop-color="#d84887"/><stop offset="1" stop-color="#7f285f"/></radialGradient>
+            <filter id="fb-glow"><feGaussianBlur stdDeviation="4"/></filter>
+          </defs>
+          <ellipse cx="91" cy="166" rx="50" ry="11" fill="#fff0c7" opacity=".5" filter="url(#fb-glow)"/>
+          <g fill="none" stroke="url(#fb-stem)" stroke-width="4" stroke-linecap="round"><path d="M89 164L48 65M93 164L72 46M98 164L100 54M102 164L128 58M107 164L147 78M94 164L33 92"/></g>
+          <g fill="#6fb080" stroke="#b1d7a7" stroke-width=".8"><path d="M63 100Q28 70 35 57Q65 62 63 100Z"/><path d="M85 117Q114 84 132 95Q123 120 85 117Z"/><path d="M111 130Q140 106 153 120Q139 140 111 130Z"/><path d="M76 80Q52 53 62 38Q82 48 76 80Z"/><path d="M112 86Q126 51 142 54Q142 77 112 86Z"/><path d="M83 144Q49 126 48 111Q75 113 83 144Z"/></g>
+          <g class="fb-flower" transform="translate(48 62)"><circle r="20" fill="url(#fb-rose)"/><g fill="#ffb6d1"><ellipse cy="-10" rx="8" ry="12"/><ellipse cx="10" cy="-1" rx="8" ry="12" transform="rotate(65 10 -1)"/><ellipse cx="2" cy="10" rx="8" ry="12" transform="rotate(145 2 10)"/><ellipse cx="-10" cy="3" rx="8" ry="12" transform="rotate(220 -10 3)"/></g><circle cx="-1" cy="-1" r="7" fill="#e45b97"/><circle cx="-3" cy="-4" r="2.5" fill="#fff4d9"/></g>
+          <g class="fb-flower fb-flower-2" transform="translate(73 43)"><circle r="20" fill="url(#fb-rose)"/><g fill="#ffcae0"><ellipse cy="-10" rx="8" ry="12"/><ellipse cx="10" cy="-1" rx="8" ry="12" transform="rotate(65 10 -1)"/><ellipse cx="2" cy="10" rx="8" ry="12" transform="rotate(145 2 10)"/><ellipse cx="-10" cy="3" rx="8" ry="12" transform="rotate(220 -10 3)"/></g><circle cx="-1" cy="-1" r="7" fill="#e45b97"/><circle cx="-3" cy="-4" r="2.5" fill="#fff4d9"/></g>
+          <g class="fb-flower fb-flower-3" transform="translate(101 52)"><circle r="19" fill="url(#fb-rose)"/><g fill="#ffa6c9"><ellipse cy="-9" rx="8" ry="11"/><ellipse cx="10" cy="-1" rx="8" ry="11" transform="rotate(65 10 -1)"/><ellipse cx="2" cy="10" rx="8" ry="11" transform="rotate(145 2 10)"/><ellipse cx="-10" cy="3" rx="8" ry="11" transform="rotate(220 -10 3)"/></g><circle r="7" fill="#d74685"/><circle cx="-3" cy="-4" r="2.5" fill="#fff4d9"/></g>
+          <g class="fb-flower" transform="translate(128 58)"><circle r="18" fill="url(#fb-rose)"/><g fill="#ffcadf"><ellipse cy="-9" rx="7" ry="11"/><ellipse cx="9" cy="-1" rx="7" ry="11" transform="rotate(65 9 -1)"/><ellipse cx="2" cy="9" rx="7" ry="11" transform="rotate(145 2 9)"/><ellipse cx="-9" cy="3" rx="7" ry="11" transform="rotate(220 -9 3)"/></g><circle r="6.5" fill="#d74685"/></g>
+          <path d="M56 134Q88 147 120 132L109 177Q89 186 70 176Z" fill="url(#fb-wrap)" stroke="#ffe9f5" stroke-width="1.8"/><path d="M76 145L88 154L99 144L104 177L89 169L73 179Z" fill="#b65b91" stroke="#ffd7e8" stroke-width="1.3"/>
+          <path d="M89 151Q65 134 62 153Q72 171 89 162Q107 174 119 155Q114 136 89 151Z" fill="#e69bc5" stroke="#ffe6f4" stroke-width="2"/>
+          <circle cx="89" cy="158" r="5" fill="#ffe8b4"/>
+        </svg>
+        <div class="finale-light-points" aria-hidden="true"><i>✦</i><i>✧</i><i>♥</i><i>✦</i><i>✧</i></div>
+        <div class="finale-scene-caption">un piccolo passo, una promessa sincera <span>♥</span></div>
+      </div>
+      <section class="love-letter" aria-label="La lettera di Anas per Carlotta">
+        <div class="letter-seal">✉</div>
+        <p class="eyebrow" data-i18n="loveLetterTitle">Una lettera per te</p>
+        <p class="love-confession" data-i18n="loveConfession">Carlotta, c’è una cosa che tengo nel cuore da un po’. Sei diventata una persona davvero speciale per me e voglio essere sincero: sono innamorato di te. Ti regalo questi fiori come piccolo segno di ciò che provo. Non voglio metterti fretta né aspettarmi una risposta particolare: qualunque cosa tu senta, la rispetterò. — Anas ♥</p>
+        <p class="signature">— Anas ♥</p>
+      </section>
+      <section id="responseChoice" class="response-choice" aria-labelledby="responseTitle">
+        <p class="eyebrow" data-i18n="responseEyebrow">ORA TOCCA A TE</p>
+        <h2 id="responseTitle" data-i18n="responseTitle">Carlotta, cosa senti?</h2>
+        <p class="response-intro" data-i18n="responseIntro">Qualunque sia la tua risposta, sarà rispettata. Scegli con il cuore, senza pressione.</p>
+        <div class="response-buttons" id="responseButtons">
+          <button class="response-yes" id="responseYes" type="button"><span>♥</span><b data-i18n="responseYes">Anch’io ti amo</b></button>
+          <button class="response-friends" id="responseFriends" type="button"><span>✿</span><b data-i18n="responseFriends">Restiamo migliori amici</b></button>
+        </div>
+        <div id="responseResult" class="response-result" hidden aria-live="polite">
+          <div id="responseResultIcon" class="response-result-icon">♥</div>
+          <h3 id="responseResultTitle"></h3>
+          <p id="responseResultText"></p>
+          <button class="primary-btn share-response-btn" id="shareResponseBtn" type="button"><span>↗</span> <span data-i18n="shareResponse">Invia la risposta ad Anas</span></button>
+          <p class="share-explain" data-i18n="shareExplain">Si aprirà il menu di condivisione del tuo telefono: scegli WhatsApp o un’altra app per mandargli la risposta.</p>
+        </div>
+      </section>
+      <div class="final-stats"><span>✦ <b id="finalStars">0</b> <small data-i18n="stars">stelle</small></span><span>♡ <b id="finalMemories">0</b> <small data-i18n="memories">ricordi</small></span></div>
+      <div class="panel-actions"><button class="primary-btn" id="replayBtn" data-i18n="playAgain">Rivivi il viaggio</button><button class="soft-btn" id="endMenuBtn" data-i18n="mainMenu">Menu principale</button></div>
+    </article>
+  </section>
+
+  <div id="hud" class="hud hidden" aria-live="polite">
+    <div class="hud-top">
+      <div class="hud-left"><div class="hud-title"><span class="tiny-moon">☾</span><span id="hudChapter">Il sentiero delle lucciole</span></div><div class="hud-progress"><span id="progressBar"></span></div></div>
+      <div class="hud-right"><div class="hud-chip"><span id="hudObjectiveIcon">✦</span> <strong id="hudStars">0 / 20</strong></div><div class="hud-chip memory-chip">♡ <strong id="hudMemories">0 / 2</strong></div><button class="hud-btn" id="muteBtn" aria-label="Attiva o disattiva l'audio">♫</button><button class="hud-btn" id="pauseBtn" aria-label="Pausa">Ⅱ</button></div>
+    </div>
+    <div id="chapterToast" class="chapter-toast"><span>✦</span><b>Una piccola luce!</b></div>
+    <div class="game-hint" id="gameHint">← → Muovi <span>·</span> Spazio / ↑ Salta <span>·</span> Raccogli le stelle ✦</div>
+    <div class="touch-controls" id="touchControls"><div class="touch-left"><button id="touchLeft" aria-label="Vai a sinistra">←</button><button id="touchRight" aria-label="Vai a destra">→</button></div><button id="touchJump" aria-label="Salta">↑</button></div>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+</main>
+<script src="api-config.js"></script>
+<script src="game.js"></script>
+<script>
+// Enable install/offline caching when hosted on HTTPS or localhost; local ZIP play still works without it.
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
+}
+</script>
+</body>
+</html>

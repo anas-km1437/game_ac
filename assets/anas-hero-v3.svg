@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300" fill="none">
+ <defs>
+  <linearGradient id="skin" x1="75" y1="28" x2="124" y2="95" gradientUnits="userSpaceOnUse"><stop stop-color="#F8D4B7"/><stop offset=".55" stop-color="#E8B596"/><stop offset="1" stop-color="#C98273"/></linearGradient>
+  <linearGradient id="hair" x1="66" y1="10" x2="134" y2="78" gradientUnits="userSpaceOnUse"><stop stop-color="#453448"/><stop offset=".38" stop-color="#292638"/><stop offset=".76" stop-color="#171B2B"/><stop offset="1" stop-color="#101522"/></linearGradient>
+  <linearGradient id="hairGloss" x1="69" y1="20" x2="120" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#9A77A2"/><stop offset=".5" stop-color="#526887"/><stop offset="1" stop-color="#26374F"/></linearGradient>
+  <linearGradient id="jacket" x1="65" y1="104" x2="134" y2="192" gradientUnits="userSpaceOnUse"><stop stop-color="#426B91"/><stop offset=".35" stop-color="#294763"/><stop offset=".75" stop-color="#1B2D46"/><stop offset="1" stop-color="#142238"/></linearGradient>
+  <linearGradient id="jacketHighlight" x1="64" y1="107" x2="87" y2="173" gradientUnits="userSpaceOnUse"><stop stop-color="#8CC4D5"/><stop offset="1" stop-color="#376A88"/></linearGradient>
+  <linearGradient id="trousers" x1="80" y1="178" x2="126" y2="273" gradientUnits="userSpaceOnUse"><stop stop-color="#29354E"/><stop offset=".5" stop-color="#1A253B"/><stop offset="1" stop-color="#101827"/></linearGradient>
+  <linearGradient id="shoe" x1="75" y1="260" x2="121" y2="282" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset=".7" stop-color="#DAE9EF"/><stop offset="1" stop-color="#91C8D7"/></linearGradient>
+  <linearGradient id="iris" x1="88" y1="55" x2="96" y2="69" gradientUnits="userSpaceOnUse"><stop stop-color="#C5FFF4"/><stop offset=".45" stop-color="#47C0CB"/><stop offset="1" stop-color="#17647F"/></linearGradient>
+  <filter id="shadow" x="20" y="275" width="160" height="28" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="4"/></filter>
+ </defs>
+ <g transform="translate(-16 0) scale(1.16 1)">
+ <!-- clean grounded shadow -->
+ <ellipse cx="100" cy="290" rx="39" ry="5.5" fill="#080C1B" opacity=".36" filter="url(#shadow)"/>
+ <!-- legs: close, tapered, natural stride (no exaggerated split) -->
+ <path d="M83 178C80 192 81 207 87 222L91 245L91 264L106 266L112 258L107 236L106 213L110 183Z" fill="url(#trousers)" stroke="#101827" stroke-width="2" stroke-linejoin="round"/>
+ <path d="M105 183C111 197 116 212 113 226L108 246L113 264L128 264L131 254L125 233L128 211L121 180Z" fill="url(#trousers)" stroke="#101827" stroke-width="2" stroke-linejoin="round"/>
+ <path d="M85 217L105 222L107 232L89 230Z" fill="#384963" opacity=".75"/>
+ <path d="M111 235L126 238L123 248L109 246Z" fill="#33435D" opacity=".8"/>
+ <!-- sneakers: separate, low-profile soles with subtle teal accents -->
+ <g transform="translate(-7 0)">
+  <path d="M91 258L106 258L112 270Q119 273 121 279Q120 284 112 284L82 283Q76 282 78 277L84 269Z" fill="url(#shoe)" stroke="#8AA7B8" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M78 278Q95 281 119 279L121 282Q119 286 111 286L83 285Q77 284 78 278Z" fill="#F9F6F4" stroke="#9CAFBF" stroke-width="1.2"/>
+  <path d="M88 273L103 275M86 277L101 279" stroke="#59AFC5" stroke-width="2" stroke-linecap="round"/>
+ </g>
+ <g transform="translate(7 0)">
+  <path d="M113 257L128 255L137 267Q145 271 146 277Q145 282 138 282L116 281Q110 279 112 274L116 267Z" fill="url(#shoe)" stroke="#8AA7B8" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M112 276Q128 279 144 277L146 281Q144 284 137 284L117 283Q112 282 112 276Z" fill="#F9F6F4" stroke="#9CAFBF" stroke-width="1.2"/>
+  <path d="M121 271L135 273M119 275L133 277" stroke="#59AFC5" stroke-width="2" stroke-linecap="round"/>
+ </g>
+ <!-- fitted bomber jacket -->
+ <path d="M77 101Q83 94 94 94L110 94Q123 97 129 107Q136 120 132 142L127 187Q113 194 99 193Q82 191 72 184L68 141Q65 117 77 101Z" fill="url(#jacket)" stroke="#122238" stroke-width="2.5" stroke-linejoin="round"/>
+ <path d="M77 105Q70 123 76 174L72 183L68 141Q65 119 77 105Z" fill="url(#jacketHighlight)"/>
+ <path d="M85 98L100 114L115 98L122 105L111 122L100 130L88 116Z" fill="#14243A" stroke="#7295B0" stroke-width="1.4" stroke-linejoin="round"/>
+ <!-- white tee and zipper -->
+ <path d="M89 110L100 121L111 109L113 155L88 155Z" fill="#EFF5F5"/>
+ <path d="M100 122L100 184" stroke="#77C9D8" stroke-width="2.4"/>
+ <path d="M96 135L100 139L104 135M96 151L100 155L104 151M96 167L100 171L104 167" stroke="#D2E7EB" stroke-width="1.6" stroke-linecap="round"/>
+ <!-- relaxed running arms: bent and close to silhouette -->
+ <path d="M78 108Q69 112 66 124L59 144Q57 151 64 154L72 151L82 132" fill="none" stroke="#274762" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M76 111L67 127L62 143" fill="none" stroke="#6D9FBE" stroke-width="3.3" stroke-linecap="round"/>
+ <path d="M62 145L58 153Q58 158 63 159L70 155L71 149Z" fill="url(#skin)"/>
+ <path d="M125 108Q134 113 136 125L139 141Q140 147 134 151L128 148L123 130" fill="none" stroke="#1B304A" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M129 114L135 128L137 141" fill="none" stroke="#547D9F" stroke-width="3.2" stroke-linecap="round"/>
+ <path d="M133 145L137 152Q137 157 132 158L126 153L128 148Z" fill="url(#skin)"/>
+ <!-- tailored details -->
+ <path d="M76 145L88 149L86 164L73 160Z" fill="#182940" stroke="#5F8EA9" stroke-width="1.4"/>
+ <path d="M77 148L85 151" stroke="#9AD4DF" stroke-width="1.3"/>
+ <circle cx="115" cy="163" r="1.8" fill="#F2D9B8"/><circle cx="115" cy="172" r="1.8" fill="#F2D9B8"/>
+ <path d="M123 107L129 113L123 119L117 113Z" fill="#F0A3CE" stroke="#FFE6F2" stroke-width="1.3"/>
+ <path d="M88 95Q99 91 112 96L110 101Q98 100 91 104Z" fill="#8ACAD5" opacity=".75"/>
+ <!-- neck -->
+ <path d="M91 79L90 99Q100 108 112 98L109 78Z" fill="url(#skin)" stroke="#C98978" stroke-width="1.2"/>
+ <!-- face: softly angular anime design -->
+ <path d="M77 47Q76 26 92 20Q112 15 124 31Q132 42 127 62L120 79Q113 89 100 87Q88 84 82 73Q76 62 77 47Z" fill="url(#skin)" stroke="#BD7D70" stroke-width="1.5"/>
+ <path d="M81 63Q80 73 88 78Q94 82 100 82" stroke="#F7C8AA" stroke-width="2" opacity=".7" stroke-linecap="round"/>
+ <!-- ear and understated ear cuff -->
+ <path d="M78 51Q69 47 71 58Q73 66 81 65Z" fill="#D99C88" stroke="#BC786E" stroke-width="1.2"/>
+ <path d="M74 56L79 60L75 62" stroke="#F3C2A7" stroke-width="1.2" stroke-linecap="round"/>
+ <path d="M75 60Q78 64 81 61" stroke="#8BE2E2" stroke-width="2.2" stroke-linecap="round"/>
+ <!-- modern swept hair, neat but a little wild -->
+ <path d="M76 54Q67 42 72 29Q73 18 87 15Q92 5 106 10Q120 8 128 22Q139 29 132 45L127 57L121 43L113 35L105 46L98 31L91 44L84 39L81 57Z" fill="url(#hair)" stroke="#111622" stroke-width="2.2" stroke-linejoin="round"/>
+ <path d="M73 34Q77 21 91 17L82 31L98 21L94 36L112 21L109 38L126 30" fill="none" stroke="url(#hairGloss)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M78 44Q88 35 96 39L103 45L97 52L87 51Z" fill="#202638"/>
+ <path d="M106 34L114 40L121 34L128 47" stroke="#526D8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+ <!-- eyebrows and bright teal eyes -->
+ <path d="M88 49Q95 45 101 49" stroke="#503841" stroke-width="2.3" stroke-linecap="round"/>
+ <path d="M108 49Q115 45 121 49" stroke="#503841" stroke-width="2.1" stroke-linecap="round"/>
+ <ellipse cx="94" cy="57" rx="4.2" ry="5.7" fill="url(#iris)" stroke="#263346" stroke-width="1.1"/><ellipse cx="94.5" cy="57" rx="1.45" ry="3.8" fill="#101827"/><circle cx="92" cy="54.5" r="1.4" fill="#F8FFED"/>
+ <ellipse cx="115" cy="57" rx="3.7" ry="5" fill="url(#iris)" stroke="#263346" stroke-width="1.1"/><ellipse cx="115.4" cy="57" rx="1.25" ry="3.2" fill="#101827"/><circle cx="113.4" cy="55" r="1.1" fill="#F8FFED"/>
+ <path d="M126 63L131 65L126 68" stroke="#B9786A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M109 74Q117 78 124 71" stroke="#954F61" stroke-width="2" stroke-linecap="round"/>
+ <path d="M108 73Q116 76 122 72" stroke="#EBA2A5" stroke-width=".9" stroke-linecap="round"/>
+ <ellipse cx="105" cy="65" rx="4.8" ry="2.2" fill="#F2A7A6" opacity=".2"/>
+ <!-- no exaggerated strap or props; finish with soft highlights -->
+ <path d="M88 96L94 102L100 98" stroke="#A6DDE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+</svg>

@@ -1,0 +1,1 @@
+For a live game URL, create a Render Static Site with this folder as the publish directory. Before publishing, configure api-config.js with your deployed backend URL. See ../DEPLOYMENT_GUIDE_AR.txt.

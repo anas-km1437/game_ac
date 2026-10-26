@@ -1,0 +1,8 @@
+Carlotta — Una Piccola Avventura | Ultimate Edition 6.1
+
+Avvio su computer: estrai lo ZIP e apri index.html, oppure avvia START_GAME.bat.
+Su telefono: per la migliore esperienza, pubblica i file su un hosting statico e apri il link con Chrome o Safari.
+I pulsanti touch sono attivi: sinistra/destra per muoversi e salto nel Capitolo II.
+Mantieni la cartella assets accanto a index.html. Nessun motore di gioco richiesto.
+
+Il gatto bianco porta un fazzoletto blu con una stellina; la cagnolina nera ha un fiocco rosa e una medaglietta a cuore.

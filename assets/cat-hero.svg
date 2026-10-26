@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="25 18 190 140">
+<defs>
+ <linearGradient id="fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".46" stop-color="#f7f9ff"/><stop offset="1" stop-color="#c9d5e8"/></linearGradient>
+ <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#edf4ff"/><stop offset="1" stop-color="#a7b8d0"/></linearGradient>
+ <linearGradient id="scarf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8be6e9"/><stop offset=".48" stop-color="#368fbd"/><stop offset="1" stop-color="#22517f"/></linearGradient>
+ <radialGradient id="eye" cx="30%" cy="20%"><stop stop-color="#e4fffc"/><stop offset=".25" stop-color="#69d9d1"/><stop offset=".72" stop-color="#208c9c"/><stop offset="1" stop-color="#16364f"/></radialGradient>
+ <linearGradient id="ear" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7d7df"/><stop offset="1" stop-color="#dca5ba"/></linearGradient>
+</defs>
+<ellipse cx="111" cy="158" rx="79" ry="7" fill="#0b1024" opacity=".22"/>
+<!-- tail: white, fluffy, gently curled -->
+<path d="M74 103C51 108 34 91 31 74C29 58 42 49 53 59C62 67 54 78 49 76" fill="none" stroke="#c6d2e6" stroke-width="19" stroke-linecap="round"/>
+<path d="M73 100C52 103 40 90 38 75C37 66 43 60 50 65" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+<!-- compact body with a cool blue little vest -->
+<path d="M55 91Q60 68 85 66L117 72Q143 80 144 102L135 126Q109 139 79 128Q53 118 55 91Z" fill="#a9b6cc"/>
+<path d="M58 88Q63 68 85 70L116 76Q138 83 139 102L132 120Q108 133 82 124Q58 114 58 88Z" fill="url(#fur)" stroke="#b5c4dc" stroke-width="1.5"/>
+<path d="M101 84Q119 86 127 103L119 118Q105 127 92 118Q86 104 101 84Z" fill="url(#shade)" opacity=".56"/>
+<path d="M76 78Q91 73 110 81L119 98L109 119L87 120L79 101Z" fill="#d7e9f7" opacity=".62"/>
+<g fill="none" stroke-linecap="round" stroke-width="1.7" stroke="#fff"><path d="M67 80l-4 8M79 73l-2 8M97 76l-4 7M118 83l3 5"/><path d="M81 117q11 6 19 3M102 122q7 1 11-3"/></g>
+<!-- short agile paws -->
+<path d="M70 116L62 139Q60 145 67 147L77 146L86 124" fill="url(#fur)" stroke="#b7c5d9" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M98 124L105 143Q107 148 115 145L122 141L114 120" fill="url(#shade)" stroke="#a3b3ce" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M62 140q-8 3-7 7q5 5 20 1l5-3M105 143q-5 5-2 8q7 3 18-4l2-4" fill="#fff" stroke="#a7b8d2" stroke-width="2" stroke-linecap="round"/>
+<!-- ears and boyish side-swept head tuft -->
+<path d="M119 68L114 30Q113 19 124 28L145 47Q154 37 166 35Q185 34 194 51L200 66Q210 79 201 92Q192 106 173 102L148 97Q126 94 119 79Z" fill="#aab8d0"/>
+<path d="M123 62L120 31Q120 24 127 30L145 48Z" fill="url(#fur)"/><path d="M128 48L124 34L138 49Z" fill="url(#ear)"/>
+<path d="M156 48L178 32Q188 28 186 41L179 59Z" fill="#e4ebf7"/><path d="M165 49L179 39L174 53Z" fill="url(#ear)"/>
+<path d="M125 62Q135 43 157 44Q180 43 192 61Q204 77 191 91Q177 103 153 93Q133 90 125 77Z" fill="url(#fur)" stroke="#abb9cf" stroke-width="1.4"/>
+<!-- soft fringe: no bow, clean cool silhouette -->
+<path d="M133 51Q139 39 151 44L158 47L152 54L144 53L137 60Z" fill="#f7faff" stroke="#d8e1f0" stroke-width="1"/>
+<path d="M136 47Q143 42 149 47" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+<!-- large teal eye, little muzzle and whiskers -->
+<path d="M150 52Q142 62 146 74" fill="none" stroke="#dce7f5" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="170" cy="67" rx="8.4" ry="11.3" fill="url(#eye)" stroke="#53627f" stroke-width="1.6"/><ellipse cx="172" cy="67" rx="2.3" ry="7.2" fill="#162a40"/><circle cx="167" cy="62.5" r="2.8" fill="#fff"/><circle cx="175" cy="71" r="1.2" fill="#fff"/>
+<path d="M176 79Q185 75 196 82Q199 88 189 92Q177 92 169 84Z" fill="#fff1f2"/><path d="M182 81l5 0-2.5 3Z" fill="#cd7895"/><path d="M185 85Q181 91 175 87" fill="none" stroke="#b16c87" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M179 85L203 81M179 88L203 92M175 85L156 80" fill="none" stroke="#c1cadd" stroke-width="1.3" stroke-linecap="round"/>
+<!-- ocean-blue bandana and small gold star charm -->
+<path d="M124 90Q145 99 163 91L169 102Q148 115 128 103Z" fill="url(#scarf)" stroke="#255b86" stroke-width="1.4"/>
+<path d="M145 102L157 105L153 125L143 112Z" fill="#2878a8" stroke="#22517f" stroke-width="1.2"/>
+<path d="M133 97Q146 105 159 98" fill="none" stroke="#d6fbff" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+<path d="M151 96l4 4-4 4-4-4Z" fill="#ffe8a6" stroke="#fff5d7" stroke-width=".8"/><circle cx="151" cy="100" r="1" fill="#fff"/>
+<path d="M160 50q8-5 15-2M130 72q-3 5 0 10" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".85"/>
+</svg>
